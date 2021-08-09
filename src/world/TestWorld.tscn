@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/testCam/testCam.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/world/map.gd" type="Script" id=2]
+
+[node name="TestWorld" type="Spatial"]
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2666, 5.63709, 3.84309 )
+light_indirect_energy = 3.13
+light_specular = 0.0
+shadow_enabled = true
+shadow_reverse_cull_face = true
+omni_range = 8.6
+omni_shadow_mode = 0
+
+[node name="testCam" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51436, 3.01765, 5.00203 )
+
+[node name="map" type="Spatial" parent="."]
+script = ExtResource( 2 )
